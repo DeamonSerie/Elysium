@@ -1,0 +1,52 @@
+[package]
+name = "pallet-liquidity-mining"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish = false
+
+[dependencies]
+codec = { workspace = true }
+scale-info = { workspace = true }
+serde = { workspace = true, optional = true }
+frame-support = { workspace = true }
+frame-system = { workspace = true }
+sp-runtime = { workspace = true }
+sp-std = { workspace = true }
+sp-io = { workspace = true }
+elysium-primitives = { workspace = true }
+pallet-elysium-assets-registry = { workspace = true }
+log = { workspace = true }
+frame-benchmarking = { workspace = true, optional = true }
+
+[dev-dependencies]
+sp-core = { workspace = true, default-features = true }
+pallet-balances = { workspace = true, default-features = true }
+
+[features]
+default = ["std"]
+std = [
+    "codec/std",
+    "scale-info/std",
+    "serde",
+    "serde/std",
+    "frame-support/std",
+    "frame-system/std",
+    "sp-runtime/std",
+    "sp-std/std",
+    "sp-io/std",
+    "elysium-primitives/std",
+    "pallet-elysium-assets-registry/std",
+    "log/std",
+    "frame-benchmarking?/std",
+]
+serde = ["dep:serde", "elysium-primitives/serde", "scale-info/serde"]
+runtime-benchmarks = [
+    "dep:frame-benchmarking",
+    "frame-benchmarking/runtime-benchmarks",
+    "frame-support/runtime-benchmarks",
+    "frame-system/runtime-benchmarks",
+    "sp-runtime/runtime-benchmarks",
+    "pallet-elysium-assets-registry/runtime-benchmarks",
+]
+try-runtime = ["frame-support/try-runtime"]

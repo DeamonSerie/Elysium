@@ -1,0 +1,11 @@
+[package]
+name = "elysium-zk-guest"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+
+[features]
+default = ["std"]
+std = []

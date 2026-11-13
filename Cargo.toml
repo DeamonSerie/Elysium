@@ -14,7 +14,7 @@ resolver = "2"
 version = "0.1.0"
 authors = ["Elysium Contributors"]
 edition = "2021"
-license = "Unlicense"
+license = "MIT"
 repository = "https://example.com/elysium"
 
 [workspace.dependencies]
